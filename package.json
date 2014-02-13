@@ -1,0 +1,21 @@
+{
+    "name": "node-mahi",
+    "description": "Mahi client",
+    "version": "1.0.0",
+    "author": "Joyent (joyent.com)",
+    "private": true,
+    "dependencies": {
+        "assert-plus": "0.1.5",
+        "aperture": "git+ssh://git@github.com:joyent/node-aperture.git#master",
+        "bunyan": "0.22.1",
+        "http-signature": "0.10.0",
+        "lru-cache": "2.5.0",
+        "restify": "2.6.1"
+    },
+    "devDependencies": {
+        "tap": "0.4.0"
+    },
+    "scripts": {
+        "test": "./node_modules/.bin/tap test/*.test.js"
+    }
+}

@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "author": "Joyent (joyent.com)",
     "private": true,
+    "main": "index.js",
     "dependencies": {
         "assert-plus": "0.1.5",
         "aperture": "git+ssh://git@github.com:joyent/node-aperture.git#master",

@@ -1,4 +1,4 @@
-# Joyent Engineering Guide
+# This is the node-mahi client.
 
 Repository: <git@git.joyent.com:eng.git>
 Browsing: <https://mo.joyent.com/eng>

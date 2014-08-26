@@ -1,4 +1,13 @@
-// Copyright (c) 2014, Joyent, Inc. All rights reserved.
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+/*
+ * Copyright (c) 2014, Joyent, Inc.
+ */
+
 //
 // To test: point this at an existing mahi server that has been bootstrapped
 // with the test-nodeletes test data under the test/data directory of mahi.git

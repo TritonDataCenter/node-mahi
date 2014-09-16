@@ -15,33 +15,70 @@
 var mahi = require('..');
 var test = require('tap').test;
 
-var CLIENT = mahi.createClient({
-    url: process.env.MAHI_TEST_URL || 'http://127.0.0.1:8080',
-    typeTable: {
-        'ip': 'ip'
-    }
-});
+var CLIENT;
+function setup() {
+    test('setup', function (t) {
+        CLIENT = mahi.createClient({
+            url: process.env.MAHI_TEST_URL || 'http://127.0.0.1:8080',
+            typeTable: {
+                'ip': 'ip'
+            }
+        });
 
-test('authenticate', function (t) {
-    CLIENT.authenticate({
-        account: 'banks',
-        keyId: 'e3:4d:9b:26:bd:ef:a1:db:43:ae:4b:f7:bc:69:a7:24'
-    }, function (err, info) {
-        t.notOk(err);
-        t.ok(info);
         t.end();
     });
-});
+}
 
-test('authorize empty roles', function (t) {
-    t.end();
-});
+function teardown() {
+    test('teardown', function (t) {
+        CLIENT.close();
+        t.end();
+    });
+}
 
-test('authorize empty tags', function (t) {
-    t.end();
-});
+setup(test); test('getAccount', function (t) {
+    CLIENT.getAccount('banks', function (err, info) {
+        t.notOk(err, 'err');
+        t.ok(info, 'info');
+        t.ok(info.account, 'info.account');
+        t.end();
+    });
+}); teardown(test);
 
-test('getName', function (t) {
+setup(test); test('getUser', function (t) {
+    CLIENT.getUser('bankofamerica', 'banks', function (err, info) {
+        t.notOk(err, 'err');
+        t.ok(info, 'info');
+        t.ok(info.account, 'info.account');
+        t.ok(info.user, 'info.user');
+        t.end();
+    });
+}); teardown(test);
+
+setup(test); test('getAccountById', function (t) {
+    CLIENT.getAccountById('bde5a308-9e5a-11e3-bbf2-1b6f3d02ff6f',
+            function (err, info) {
+        t.notOk(err, 'err');
+        t.ok(info, 'info');
+        t.ok(info.account, 'info.account');
+        t.end();
+    });
+}); teardown(test);
+
+setup(test); test('getUserById', function (t) {
+    CLIENT.getUserById('3ffc7b4c-66a6-11e3-af09-8752d24e4669',
+            function (err, info) {
+        t.notOk(err, 'err');
+        t.ok(info, 'info');
+        t.ok(info, 'info');
+        t.ok(info.account, 'info.account');
+        t.ok(info.user, 'info.user');
+        t.end();
+    });
+}); teardown(test);
+
+
+setup(test); test('getName', function (t) {
     var uuids = [
         'bde5a308-9e5a-11e3-bbf2-1b6f3d02ff6f',
         '1e77f528-9e64-11e3-8d12-838d40383bce',
@@ -51,22 +88,22 @@ test('getName', function (t) {
         uuids: uuids
     }, function (err, lookup) {
         uuids.forEach(function (uuid) {
-            t.ok(lookup[uuid]);
+            t.ok(lookup[uuid], 'got ' + uuid);
         });
         t.end();
     });
-});
+}); teardown(test);
 
-test('getUuid - account only', function (t) {
+setup(test); test('getUuid - account only', function (t) {
     CLIENT.getUuid({
         account: 'banks'
     }, function (err, lookup) {
         t.ok(lookup.account);
         t.end();
     });
-});
+}); teardown(test);
 
-test('getUuid - roles', function (t) {
+setup(test); test('getUuid - roles', function (t) {
     CLIENT.getUuid({
         account: 'banks',
         type: 'role',
@@ -77,9 +114,26 @@ test('getUuid - roles', function (t) {
         t.ok(lookup.uuids.lender);
         t.end();
     });
-});
+}); teardown(test);
 
-test('clean up', function (t) {
-    CLIENT.close();
-    t.end();
-});
+setup(test); test('authorize account self', function (t) {
+    CLIENT.getAccount('banks', function (err, info) {
+        var principal = info;
+        var action = 'read';
+        var resource = {
+            owner: info,
+            roles: []
+        };
+        var conditions = {
+            activeRoles: []
+        };
+        var ok = CLIENT.authorize({
+            principal: principal,
+            action: action,
+            resource: resource,
+            conditions: conditions
+        });
+        t.ok(ok);
+        t.end();
+    });
+}); teardown(test);

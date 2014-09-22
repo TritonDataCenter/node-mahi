@@ -32,7 +32,6 @@ NPM_EXEC	:= npm
 #
 # Files
 #
-#DOC_FILES	 = index.restdown boilerplateapi.restdown
 JS_FILES	:= $(shell ls *.js) $(shell find lib test -name '*.js')
 JSON_FILES	 = package.json
 JSL_CONF_NODE	 = tools/jsl.node.conf

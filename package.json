@@ -1,9 +1,8 @@
 {
     "name": "mahi",
     "description": "Mahi client",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "author": "Joyent (joyent.com)",
-    "private": true,
     "main": "index.js",
     "dependencies": {
         "aperture": "git://github.com/joyent/node-aperture.git#master",

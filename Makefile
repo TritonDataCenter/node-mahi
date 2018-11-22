@@ -52,7 +52,7 @@ all: $(REPO_DEPS) $(TAP)
 $(TAP):
 	$(NPM) install
 
-CLEAN_FILES += $(TAP) ./node_modules/tap
+CLEAN_FILES += ./node_modules npm-debug.log mahi-*.tgz
 
 .PHONY: test
 test: $(TAP)

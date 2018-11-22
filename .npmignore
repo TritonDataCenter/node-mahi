@@ -1,0 +1,10 @@
+cscope.in.out
+cscope.po.out
+cscope.out
+/deps
+/build
+/mahi-*.tgz
+/node_modules
+/test
+/tmp
+/tools

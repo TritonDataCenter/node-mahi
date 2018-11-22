@@ -1,9 +1,6 @@
 /node_modules
-/tmp
-build
-docs/*.json
-docs/*.html
+/build
+/mahi-*.tgz
 cscope.in.out
 cscope.po.out
 cscope.out
-smf/manifests/bapi.xml

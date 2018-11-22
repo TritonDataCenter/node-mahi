@@ -1,7 +1,7 @@
 {
     "name": "mahi",
     "description": "Mahi client",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "author": "Joyent (joyent.com)",
     "main": "index.js",
     "// lru-cache": "attempting to pin version while satisfying transitive deps, because lru-cache@4.1.4 includes yallist@3 which breaks node --abort-on-uncaught-exception with node <v4",

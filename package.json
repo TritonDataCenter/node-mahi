@@ -1,16 +1,16 @@
 {
     "name": "mahi",
     "description": "Mahi client",
-    "version": "2.3.1",
+    "version": "2.3.2",
     "author": "Joyent (joyent.com)",
     "main": "index.js",
     "dependencies": {
         "aperture": "git://github.com/joyent/node-aperture.git#master",
         "assert-plus": "0.1.5",
-        "bunyan": "1.8.1",
+        "bunyan": "1.8.12",
         "http-signature": "0.10.0",
         "lru-cache": "4.1.5",
-        "restify": "4.1.1",
+        "restify": "4.3.4",
         "verror": "1.3.7"
     },
     "devDependencies": {

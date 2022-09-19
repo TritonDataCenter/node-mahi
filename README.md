@@ -6,13 +6,14 @@
 
 <!--
     Copyright (c) 2014, Joyent, Inc.
+    Copyright 2022 MNX Cloud, Inc.
 -->
 
 # node-mahi
 
-This repository is part of the Joyent SmartDataCenter project (SDC).  For
-contribution guidelines, issues, and general documentation, visit the main
-[SDC](http://github.com/joyent/sdc) project page.
+This repository is part of Triton Data Center.  For contribution
+guidelines, issues, and general documentation, visit the main
+[Triton](http://github.com/TritonDataCenter/triton) project page.
 
 This is the client for Mahi. When talking to mahi, translation and
 authentication responses are cached. node-mahi also contains the authorization
@@ -20,5 +21,7 @@ API.
 
 # Testing
 
-Testing requires a Mahi server instance. Point MAHI_TEST_URL at the test
-instance and run `make test`.
+Testing requires a Mahi server instance.  Point MAHI\_TEST\_URL at an existing
+server that has been bootstrapped with the
+[Mahi test data](https://github.com/TritonDataCenter/mahi/blob/master/test/data/test-nodeletes.ldif)
+and run `make test`.

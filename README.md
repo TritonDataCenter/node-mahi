@@ -21,7 +21,7 @@ API.
 
 # Testing
 
-Testing requires a Mahi server instance.  Point MAHI\_TEST\_URL at an existing
+Testing requires a Mahi server instance.  Point `MAHI_TEST_URL` at an existing
 server that has been bootstrapped with the
 [Mahi test data](https://github.com/TritonDataCenter/mahi/blob/master/test/data/test-nodeletes.ldif)
 and run `make test`.

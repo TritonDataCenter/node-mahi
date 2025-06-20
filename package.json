@@ -1,8 +1,8 @@
 {
     "name": "mahi",
     "description": "Mahi client",
-    "version": "2.4.3",
-    "author": "MNX Cloud (mnx.io)",
+    "version": "2.4.4",
+    "author":"Edgecast Cloud (edgecast.io)"
     "main": "index.js",
     "dependencies": {
         "aperture": "git+https://github.com/TritonDataCenter/node-aperture.git#3081d76351d44c7ab1f3d7966b6636c4053b80f8",

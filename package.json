@@ -1,7 +1,7 @@
 {
     "name": "mahi",
     "description": "Mahi client",
-    "version": "2.4.4",
+    "version": "2.5.0",
     "author":"Edgecast Cloud (edgecast.io)",
     "main": "index.js",
     "dependencies": {

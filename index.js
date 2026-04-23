@@ -8,4 +8,9 @@
  * Copyright (c) 2014, Joyent, Inc.
  */
 
-module.exports = require('./lib/client.js');
+var client = require('./lib/client.js');
+var scopeSchema = require('./lib/scope-schema.js');
+
+client.scopeSchema = scopeSchema;
+
+module.exports = client;
